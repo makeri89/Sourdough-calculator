@@ -1,0 +1,24 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+#textInput {
+    border: none;
+}
+
+#wheatRatio {
+    display: inline;
+}
+
+#speltRatio {
+    display: none;
+}
+
+#ryeRatio {
+    display: none;
+}
+
+#recipeDisplay {
+    display: none;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Sourdough bread calculator</h1>
+    </header>
+
+    <main id="main">
+        <form>
+            <h3>Which flours will you be using?<br>Set the amounts in baker's percentage</h3>
+            <input type="checkbox" name="flour1" id="wheat" checked>Wheat
+            <input type="number" name="flourRatio" id="wheatRatio" min="0" max="100" value="100">%<br>
+            <input type="checkbox" name="flour2" id="spelt">Spelt
+            <input type="number" name="flourRatio" id="speltRatio" min="0" max="100" value="0">%<br>
+            <input type="checkbox" name="flour3" id="rye">Rye
+            <input type="number" name="flourRatio" id="ryeRatio" min="0" max="100" value="0">%<br>
+            <h3>Set your hydration percentage:</h3>
+            <input type="range" name="hydration" id="hydration" value="70" min='0' max="150"
+                oninput="hydrationAmountId.value = hydration.value">
+            <output name='hydrationAmountName' id="hydrationAmountId" value="">70</output> <br>
+            <h3>Set your salt amount in baker's percentage:</h3>
+            <input type="number" id="salt">%
+            <h3>How many breads do you wish to bake?</h3>
+            <input type="number" name="breadAmount" id="breadAmount" value="2">
+        </form><br>
+        <button id="calcBtn">Calculate your recipe!</button>
+        <section id="recipeDisplay">
+            <h3>You should use</h3>
+            <div id="wheatAmount"></div>
+            <div id="speltAmount"></div>
+            <div id="ryeAmount"></div>
+            <div id="waterAmount"></div>
+            <div id="saltAmount"></div>
+            <p>for your desired dough!</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
