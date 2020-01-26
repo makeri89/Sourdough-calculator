@@ -9,6 +9,12 @@ body {
     background-image: url('bread.png');
 }
 
+@media (min-height: 600px) {
+    body {
+        background-size: auto 112vh;
+        background-repeat: no-repeat;
+    }
+}
 #textInput {
     border: none;
 }
@@ -70,6 +76,6 @@ header {
 }
 
 main {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 10px 0 5vh 0;
 }
