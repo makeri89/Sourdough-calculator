@@ -1,6 +1,11 @@
 * {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    margin: 0;
+}
+
+body {
+    background-image: url('bread.png');
 }
 
 #textInput {
@@ -21,4 +26,43 @@
 
 #recipeDisplay {
     display: none;
+}
+
+#calcBtn {
+    padding: 5px 10px;
+    margin: auto;
+}
+
+input {
+    margin: 5px;
+}
+
+h3 {
+    margin: 10px;
+}
+
+header h1 {
+    margin: 10px;
+    font-weight: 800;
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        padding: 5vh;
+    }
+    
+    main {
+        margin: 0 20vw;
+        padding: 5vh 0 15vh 0;
+    }
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 3vh 0;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 0 5vh 0;
 }

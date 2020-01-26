@@ -110,8 +110,10 @@ const calculateFlourAmount = () => {
 
 const calculateSaltAmount = () => {
     salt = (saltMultiplier * (totalFlourAmount * breadAmount.value)) / 10 * 10;
-    let saltNode = document.createTextNode(salt + ' grams of salt');
-    saltAmountDisplay.appendChild(saltNode);
+    if (salt != 0) {
+        let saltNode = document.createTextNode(salt + ' grams of salt');
+        saltAmountDisplay.appendChild(saltNode);
+    }
 }
 
 calcBtn.addEventListener('click', (e) => {
