@@ -27,6 +27,8 @@
             <input type="range" name="hydration" id="hydration" value="70" min='0' max="150"
                 oninput="hydrationAmountId.value = hydration.value">
             <output name='hydrationAmountName' id="hydrationAmountId" value="">70</output>% <br>
+            <h3>Set your starter amount in baker's percentage:</h3>
+            <input type="number" id="starter" step="1">%
             <h3>Set your salt amount in baker's percentage:</h3>
             <input type="number" id="salt" step="0.1">%
             <h3>How many breads do you wish to bake?</h3>
@@ -39,6 +41,7 @@
             <div id="speltAmount"></div>
             <div id="ryeAmount"></div>
             <div id="waterAmount"></div>
+            <div id="starterAmount"></div>
             <div id="saltAmount"></div>
             <br><p>for your desired dough!</p>
         </section>

@@ -14,6 +14,8 @@ const speltAmountDisplay = document.getElementById('speltAmount');
 const ryeAmountDisplay = document.getElementById('ryeAmount');
 const saltAmount = document.getElementById('salt');
 const saltAmountDisplay = document.getElementById('saltAmount');
+const starterAmount = document.getElementById('starter');
+const starterAmountDisplay = document.getElementById('starterAmount');
 const recipeDisplay = document.getElementById('recipeDisplay');
 let multiplier = '';
 let wheatPercent ='100';
@@ -31,6 +33,7 @@ let ryeMultiplier = '';
 let ryeAmount = '';
 let saltMultiplier = '';
 let salt = '';
+let starter = '';
 
 wheat.addEventListener('click', (e) => {
     wheatRatio.style.display = 'inline';
@@ -68,7 +71,11 @@ ryeRatio.addEventListener('change', (e) => {
 
 saltAmount.addEventListener('change', (e) => {
     saltMultiplier = saltAmount.value / 100;
-})
+});
+
+starterAmount.addEventListener('change', (e) => {
+    starterMultiplier = starterAmount.value / 100;
+});
 
 const calculateWheatAmount = () => {
     wheatMultiplier = wheatPercent / 100;
@@ -108,6 +115,14 @@ const calculateFlourAmount = () => {
     calculateRyeAmount();
 }
 
+const calculateStarterAmount = () => {
+    starter = (starterMultiplier * (totalFlourAmount * breadAmount.value)) / 10 * 10;
+    if (starter != 0) {
+        let starterNode = document.createTextNode(starter + ' grams of starter');
+        starterAmountDisplay.appendChild(starterNode);
+    }
+}
+
 const calculateSaltAmount = () => {
     salt = (saltMultiplier * (totalFlourAmount * breadAmount.value)) / 10 * 10;
     if (salt != 0) {
@@ -116,9 +131,20 @@ const calculateSaltAmount = () => {
     }
 }
 
+const clearPreviousAmounts = () => {
+    wheatAmountDisplay.innerText = '';
+    speltAmountDisplay.innerText = '';
+    ryeAmountDisplay.innerText = '';
+    starterAmountDisplay.innerText = '';
+    saltAmountDisplay.innerText = '';
+    waterAmountDisplay.innerText = '';
+}
+
 calcBtn.addEventListener('click', (e) => {
+    clearPreviousAmounts();
     calculateWaterAmount();
     calculateFlourAmount();
+    calculateStarterAmount();
     calculateSaltAmount();
     recipeDisplay.style.display = 'inline';
 })
